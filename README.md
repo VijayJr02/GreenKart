@@ -22,6 +22,3 @@
 - **Payment Gateway**: Stripe
 
 ---
-
-## 📁 Project Structure
-
