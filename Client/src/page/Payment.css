@@ -1,0 +1,42 @@
+/* Payment.css */
+
+.payment {
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradient colors */
+    min-height: 100vh; /* Ensure it covers full viewport height */
+    padding: 20px; /* Add some padding */
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the container */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.table {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    border-radius: 10px; /* Rounded corners for the table */
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white for cards */
+    border-radius: 10px; /* Rounded corners for the cards */
+    padding: 15px; /* Padding inside cards */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.btn-info {
+    background-color: #007bff; /* Bootstrap's primary color */
+    border: none; /* No border */
+}
+
+.btn-info:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.pay {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white for payment summary */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Padding for summary */
+    margin-top: 20px; /* Space above */
+}
