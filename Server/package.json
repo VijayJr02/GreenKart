@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "instamojo-nodejs": "0.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
+    "open": "^8.2.1",
+    "openurl": "^1.1.1",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
