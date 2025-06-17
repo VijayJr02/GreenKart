@@ -1,0 +1,68 @@
+-- Create the database
+CREATE DATABASE ecom_react;
+
+-- Use the database
+USE ecom_react;
+
+-- Create 'users' table
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255)
+);
+
+-- Create 'user_data' table
+CREATE TABLE user_data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(255),
+    phone VARCHAR(20),
+    address TEXT,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- Create 'products' table
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    description TEXT,
+    price DECIMAL(10, 2),
+    image_url VARCHAR(255),
+    stock INT
+);
+
+-- Create 'orders' table
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    userid INT,
+    totalprice DECIMAL(10,2),
+    orderstatus VARCHAR(50),
+    paymentmode VARCHAR(50),
+    paymentid VARCHAR(255),
+    FOREIGN KEY (userid) REFERENCES users(id)
+);
+
+-- Create 'orderitems' table
+CREATE TABLE orderitems (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    orderid INT,
+    productid INT,
+    productqty INT,
+    productprice DECIMAL(10,2),
+    FOREIGN KEY (orderid) REFERENCES orders(id),
+    FOREIGN KEY (productid) REFERENCES products(id)
+);
+
+-- product table values 
+INSERT INTO products (id, name, description, price, image_url, stock) VALUES
+(1, 'Snake Plant', 'Also known as "Mother-in-law''s Tongue," this plant is extremely hardy and can survive in low light with minimal watering.', 400.00, 'img/snake_plant.png', 10),
+(2, 'Nerve Plant', 'This plant has small, dark green leaves with prominent white veins, creating a striking contrast.', 200.00, 'img/nerve_plant.png', 10),
+(3, 'Spider Plant', 'This plant has long, arching leaves with green and white stripes, and is known for its easy care and air-purifying abilities.', 300.00, 'img/spider_plant.png', 10),
+(4, 'Rubber Plant', 'The Rubber Plant features large, glossy, dark green leaves and can grow into an impressive indoor tree.', 450.00, 'img/rubber_plant.png', 10),
+(5, 'Golden Pothos / Money Plant', 'Known as the Money Plant, this plant has heart-shaped leaves and is famous for being easy to grow indoors.', 350.00, 'img/golden_pothos.png', 10),
+(6, 'Jade Plant', 'The Jade Plant has thick, fleshy, oval-shaped leaves and symbolizes good luck and prosperity in many cultures.', 500.00, 'img/jade_plant.png', 10),
+(7, 'Anthurium', 'This plant has glossy green leaves and vibrant red flowers, making it a popular choice for brightening indoor spaces.', 600.00, 'img/anthurium.png', 10),
+(8, 'Golden Money Plant', 'This variety of the Money Plant has bright, lime-colored leaves and is perfect for hanging baskets or pots.', 300.00, 'img/golden_money_plant.png', 10),
+(9, 'Dracaena', 'This plant has long, green, lance-shaped leaves and is known for its ability to remove toxins from indoor air.', 550.00, 'img/dracaena.png', 10);
